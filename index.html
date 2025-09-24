@@ -77,20 +77,25 @@ transition: all 0.3s ease;
 transform: translateY(-3px);
 box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
 }
-.modal {
+.image-overlay {
 display: none;
 position: fixed;
 top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: rgba(0, 0, 0, 0.8);
+background: rgba(0, 0, 0, 0.9);
 z-index: 1000;
 }
-.modal.active {
+.image-overlay.active {
 display: flex;
 align-items: center;
 justify-content: center;
+}
+.image-overlay img {
+max-width: 90%;
+max-height: 90%;
+object-fit: contain;
 }
 .hamburger {
 display: flex;
@@ -197,13 +202,13 @@ transform: translateY(-2px);
 <div class="border-t border-gray-200 pt-6">
 <p class="text-sm text-gray-600 mb-4">Follow Me</p>
 <div class="flex space-x-3">
-<a href="https://www.linkedin.com/in/ogunleye-feranmi-687b71178/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BPXunnPecSE6IEMhr50NMHA%3D%3D" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-blue-700 transition-colors duration-300">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-blue-700 transition-colors duration-300">
 <i class="ri-linkedin-fill text-lg"></i>
 </a>
 <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-blue-700 transition-colors duration-300">
 <i class="ri-instagram-line text-lg"></i>
 </a>
-<a href="https://www.facebook.com/ogunleye.samuel.35513?__tn__=-UC*F" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-blue-700 transition-colors duration-300">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-blue-700 transition-colors duration-300">
 <i class="ri-facebook-fill text-lg"></i>
 </a>
 <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-blue-700 transition-colors duration-300">
@@ -305,57 +310,57 @@ With expertise spanning architecture, interior design, and graphics design, I br
 </div>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioGrid">
-<div class="project-card portfolio-item cursor-pointer" data-category="architecture" onclick="openModal('Modern residential complex with contemporary architectural design, glass facades, clean lines, sustainable materials, urban environment, professional architectural photography', 'Skyline Residences', 'A modern residential complex featuring sustainable design principles and contemporary aesthetics.')">
+<div class="project-card portfolio-item cursor-pointer" data-category="architecture" onclick="openImageView(this, 'Contemporary Family Villa', 'An elegant two-story family home featuring modern architectural elements, spacious balconies, and thoughtful integration with the surrounding landscape.')">
 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Modern%20residential%20complex%20with%20contemporary%20architectural%20design%2C%20glass%20facades%2C%20clean%20lines%2C%20sustainable%20materials%2C%20urban%20environment%2C%20professional%20architectural%20photography&width=400&height=300&seq=arch001&orientation=landscape" alt="Architecture Project" class="w-full h-48 object-cover object-top">
+<img src="https://static.readdy.ai/image/ff7f30470f8e4f82a941abb74056f0bf/5a79a86525d4a1d3669a556d2be99b62.jfif" alt="Architecture Project" class="w-full h-48 object-cover object-top">
 <div class="p-6">
-<h3 class="text-xl font-semibold text-gray-900 mb-2">Skyline Residences</h3>
-<p class="text-gray-600">Modern residential complex</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Contemporary Family Villa</h3>
+<p class="text-gray-600">Luxury residential design</p>
 </div>
 </div>
 </div>
-<div class="project-card portfolio-item cursor-pointer" data-category="interior" onclick="openModal('Luxury modern living room interior design, contemporary furniture, neutral color palette, natural lighting, sophisticated decor, high-end residential space', 'Elegant Living Space', 'Sophisticated interior design combining comfort with modern aesthetics.')">
+<div class="project-card portfolio-item cursor-pointer" data-category="architecture" onclick="openImageView(this, 'Modern Residential Complex', 'A stunning contemporary residential development featuring clean lines, sophisticated materials, and thoughtful integration of indoor-outdoor living spaces with premium finishes throughout.')">
 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Luxury%20modern%20living%20room%20interior%20design%2C%20contemporary%20furniture%2C%20neutral%20color%20palette%2C%20natural%20lighting%2C%20sophisticated%20decor%2C%20high-end%20residential%20space&width=400&height=300&seq=int001&orientation=landscape" alt="Interior Project" class="w-full h-48 object-cover object-top">
+<img src="https://static.readdy.ai/image/ff7f30470f8e4f82a941abb74056f0bf/2fa827925740eea308603287c5032a1f.jfif" alt="Architecture Project" class="w-full h-48 object-cover object-top">
 <div class="p-6">
-<h3 class="text-xl font-semibold text-gray-900 mb-2">Elegant Living Space</h3>
-<p class="text-gray-600">Luxury interior design</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Modern Residential Complex</h3>
+<p class="text-gray-600">Contemporary housing development</p>
 </div>
 </div>
 </div>
-<div class="project-card portfolio-item cursor-pointer" data-category="graphics" onclick="openModal('Professional brand identity design mockup, modern logo design, business cards, letterhead, clean typography, corporate branding materials, minimalist design aesthetic', 'Corporate Identity', 'Complete brand identity package for a technology startup.')">
+<div class="project-card portfolio-item cursor-pointer" data-category="architecture" onclick="openImageView(this, 'Executive Residence', 'A sophisticated single-story home featuring contemporary design elements with clean lines, premium materials, and seamless indoor-outdoor integration. The design emphasizes luxury living with thoughtful architectural details and modern amenities.')">
 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Professional%20brand%20identity%20design%20mockup%2C%20modern%20logo%20design%2C%20business%20cards%2C%20letterhead%2C%20clean%20typography%2C%20corporate%20branding%20materials%2C%20minimalist%20design%20aesthetic&width=400&height=300&seq=gfx001&orientation=landscape" alt="Graphics Project" class="w-full h-48 object-cover object-top">
+<img src="https://static.readdy.ai/image/ff7f30470f8e4f82a941abb74056f0bf/9dc06508ef579da0cb4531cd260c4477.jfif" alt="Architecture Project" class="w-full h-48 object-cover object-top">
 <div class="p-6">
-<h3 class="text-xl font-semibold text-gray-900 mb-2">Corporate Identity</h3>
-<p class="text-gray-600">Brand identity design</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Executive Residence</h3>
+<p class="text-gray-600">Luxury residential design</p>
 </div>
 </div>
 </div>
-<div class="project-card portfolio-item cursor-pointer" data-category="architecture" onclick="openModal('Commercial office building exterior, modern glass architecture, steel frame construction, urban setting, contemporary business district, professional architectural photography', 'Business Hub', 'State-of-the-art commercial building designed for modern businesses.')">
+<div class="project-card portfolio-item cursor-pointer" data-category="architecture" onclick="openImageView(this, 'Modern Residential Interior', 'A contemporary living space that combines comfort with sophisticated design elements.')">
 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Commercial%20office%20building%20exterior%2C%20modern%20glass%20architecture%2C%20steel%20frame%20construction%2C%20urban%20setting%2C%20contemporary%20business%20district%2C%20professional%20architectural%20photography&width=400&height=300&seq=arch002&orientation=landscape" alt="Architecture Project" class="w-full h-48 object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=Modern%20luxury%20residential%20interior%20design%20with%20contemporary%20furniture%2C%20clean%20lines%2C%20neutral%20color%20palette%2C%20natural%20lighting%2C%20sophisticated%20living%20space%2C%20high-end%20finishes%2C%20minimalist%20aesthetic%2C%20architectural%20details&width=400&height=300&seq=project-1&orientation=landscape" alt="Architecture Project" class="w-full h-48 object-cover object-top">
 <div class="p-6">
-<h3 class="text-xl font-semibold text-gray-900 mb-2">Business Hub</h3>
-<p class="text-gray-600">Commercial architecture</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Modern Residential Interior</h3>
+<p class="text-gray-600">A contemporary living space that combines comfort with sophisticated design elements.</p>
 </div>
 </div>
 </div>
-<div class="project-card portfolio-item cursor-pointer" data-category="interior" onclick="openModal('Modern kitchen interior design, white cabinets, marble countertops, stainless steel appliances, pendant lighting, contemporary residential kitchen, clean minimalist style', 'Culinary Haven', 'Modern kitchen design emphasizing functionality and style.')">
+<div class="project-card portfolio-item cursor-pointer" data-category="interior" onclick="openImageView(this, 'Commercial Architecture', 'Innovative office building design that prioritizes functionality and employee wellbeing.')">
 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Modern%20kitchen%20interior%20design%2C%20white%20cabinets%2C%20marble%20countertops%2C%20stainless%20steel%20appliances%2C%20pendant%20lighting%2C%20contemporary%20residential%20kitchen%2C%20clean%20minimalist%20style&width=400&height=300&seq=int002&orientation=landscape" alt="Interior Project" class="w-full h-48 object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=Contemporary%20commercial%20office%20building%20exterior%20with%20glass%20facade%2C%20modern%20architecture%2C%20clean%20geometric%20lines%2C%20professional%20business%20environment%2C%20urban%20setting%2C%20innovative%20design%20elements%2C%20natural%20lighting&width=400&height=300&seq=project-2&orientation=landscape" alt="Interior Project" class="w-full h-48 object-cover object-top">
 <div class="p-6">
-<h3 class="text-xl font-semibold text-gray-900 mb-2">Culinary Haven</h3>
-<p class="text-gray-600">Kitchen interior design</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Commercial Architecture</h3>
+<p class="text-gray-600">Innovative office building design that prioritizes functionality and employee wellbeing.</p>
 </div>
 </div>
 </div>
-<div class="project-card portfolio-item cursor-pointer" data-category="graphics" onclick="openModal('Real estate marketing brochure design, property photography layout, modern typography, professional real estate branding, elegant marketing materials, high-end property presentation', 'Property Showcase', 'Marketing materials for luxury real estate development.')">
+<div class="project-card portfolio-item cursor-pointer" data-category="graphics" onclick="openImageView(this, 'Restaurant Interior', 'Warm and inviting dining space that enhances the culinary experience.')">
 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Real%20estate%20marketing%20brochure%20design%2C%20property%20photography%20layout%2C%20modern%20typography%2C%20professional%20real%20estate%20branding%2C%20elegant%20marketing%20materials%2C%20high-end%20property%20presentation&width=400&height=300&seq=gfx002&orientation=landscape" alt="Graphics Project" class="w-full h-48 object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=Elegant%20restaurant%20interior%20design%20with%20warm%20lighting%2C%20sophisticated%20dining%20atmosphere%2C%20modern%20furniture%2C%20stylish%20decor%2C%20contemporary%20hospitality%20design%2C%20comfortable%20seating%20areas%2C%20professional%20interior%20styling&width=400&height=300&seq=project-3&orientation=landscape" alt="Graphics Project" class="w-full h-48 object-cover object-top">
 <div class="p-6">
-<h3 class="text-xl font-semibold text-gray-900 mb-2">Property Showcase</h3>
-<p class="text-gray-600">Marketing design</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Restaurant Interior</h3>
+<p class="text-gray-600">Warm and inviting dining space that enhances the culinary experience.</p>
 </div>
 </div>
 </div>
@@ -383,7 +388,7 @@ Detailed architectural plans, elevations, and technical drawings for residential
 </div>
 <div class="service-card bg-white p-8 rounded-xl shadow-lg text-center scroll-reveal">
 <div class="w-16 h-16 flex items-center justify-center mx-auto mb-6 bg-primary text-white rounded-full">
-<i class="ri-3d-view-line text-2xl"></i>
+<i class="ri-box-3-line text-2xl"></i>
 </div>
 <h3 class="text-xl font-semibold text-gray-900 mb-4">3D Visualization</h3>
 <p class="text-gray-600 leading-relaxed">
@@ -432,6 +437,36 @@ Ready to start your next project? Let's discuss how I can help bring your vision
 <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-300" placeholder="your.email@example.com"required>
 </div>
 <div>
+  <label class="block text-sm font-medium text-gray-700 mb-2">Project Type</label>
+  <div class="relative">
+    <!-- Hidden input for form submission -->
+    <input type="hidden" id="project-input" name="project" required>
+
+    <button type="button" id="project-type-button"
+      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors text-left bg-white flex items-center justify-between">
+      <span id="project-type-text" class="text-gray-500">Select project type</span>
+      <div class="w-4 h-4 flex items-center justify-center transition-transform" id="project-type-arrow">
+        <i class="ri-arrow-down-s-line text-gray-400"></i>
+      </div>
+    </button>
+
+    <!-- Dropdown -->
+    <div id="project-type-dropdown"
+      class="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg z-10 hidden">
+      <div class="py-1">
+        <div class="project-type-option px-4 py-2 hover:bg-gray-50 cursor-pointer" data-value="Architecture">Architecture</div>
+        <div class="project-type-option px-4 py-2 hover:bg-gray-50 cursor-pointer" data-value="Interior Design">Interior Design</div>
+        <div class="project-type-option px-4 py-2 hover:bg-gray-50 cursor-pointer" data-value="Graphic Design">Graphic Design</div>
+        <div class="project-type-option px-4 py-2 hover:bg-gray-50 cursor-pointer" data-value="Renovation">Renovation</div>
+        <div class="project-type-option px-4 py-2 hover:bg-gray-50 cursor-pointer" data-value="Consultation">Consultation</div>
+      </div>
+    </div>
+
+    <!-- Error message -->
+    <p id="project-error" class="text-red-500 text-sm mt-1 hidden">Please select a project type.</p>
+  </div>
+</div>
+<div>
 <label class="block text-gray-700 font-medium mb-2">Message</label>
 <textarea name="Message" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-300 resize-none" placeholder="Tell me about your project..." required></textarea>
 </div>
@@ -447,30 +482,42 @@ Send Message
 <p class="text-gray-600 leading-relaxed mb-8">
 I'm always excited to work on new projects and collaborate with creative minds. Whether you have a specific vision or need guidance on your design journey, I'm here to help.
 </p>
+<div class="space-y-6">
+<div class="flex items-center">
+<div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mr-4">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-mail-line text-primary"></i>
+</div>
 </div>
 <div>
-                        <h3 class="text-xl font-medium text-gray-900 mb-6">Contact Information</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-lg mr-4">
-                                    <i class="ri-mail-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm text-gray-500">Email</div>
-                                    <div class="text-gray-900">feranmisamuel3@gmail.com</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-lg mr-4">
-                                    <i class="ri-phone-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm text-gray-500">Phone</div>
-                                    <div class="text-gray-900">+234 703 372 3794</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="font-medium text-gray-900">Email</div>
+<div class="text-gray-600">feranmisamuel3@gmail.com</div>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mr-4">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-phone-line text-primary"></i>
+</div>
+</div>
+<div>
+<div class="font-medium text-gray-900">Phone</div>
+<div class="text-gray-600">+234 703 372 3794</div>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mr-4">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+</div>
+<div>
+<div class="font-medium text-gray-900">Location</div>
+<div class="text-gray-600">Lagos, Nigeria</div>
+</div>
+</div>
+</div>
+</div>
 <div>
 <h4 class="text-lg font-semibold text-gray-900 mb-4">Follow Me</h4>
 <div class="flex space-x-4">
@@ -504,14 +551,14 @@ I'm always excited to work on new projects and collaborate with creative minds. 
 </div>
 </div>
 </footer>
-<div class="modal" id="projectModal">
-<div class="bg-white rounded-xl max-w-4xl mx-4 p-8 relative">
-<button class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700" onclick="closeModal()">
-<i class="ri-close-line text-xl"></i>
+<div class="image-overlay" id="imageOverlay">
+<button class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center text-white hover:text-gray-300 bg-black bg-opacity-50 rounded-full" onclick="closeImageView()">
+<i class="ri-close-line text-2xl"></i>
 </button>
-<img id="modalImage" src="" alt="" class="w-full h-96 object-cover object-top rounded-lg mb-6">
-<h3 id="modalTitle" class="text-2xl font-bold text-gray-900 mb-4"></h3>
-<p id="modalDescription" class="text-gray-600 leading-relaxed"></p>
+<img id="overlayImage" src="" alt="" class="rounded-lg shadow-2xl">
+<div class="absolute bottom-6 left-6 right-6 text-white">
+<h3 id="overlayTitle" class="text-2xl font-bold mb-2"></h3>
+<p id="overlayDescription" class="text-gray-200"></p>
 </div>
 </div>
 <div class="scroll-to-top" id="scrollToTop">
@@ -638,6 +685,51 @@ window.addEventListener('scroll', handleScrollAnimation);
 handleScrollAnimation();
 });
 </script>
+<script>
+  const projectButton = document.getElementById("project-type-button");
+  const projectDropdown = document.getElementById("project-type-dropdown");
+  const projectText = document.getElementById("project-type-text");
+  const projectInput = document.getElementById("project-input");
+  const projectError = document.getElementById("project-error");
+
+  // Toggle dropdown
+  projectButton.addEventListener("click", () => {
+    projectDropdown.classList.toggle("hidden");
+  });
+
+  // Handle selection
+  document.querySelectorAll(".project-type-option").forEach(option => {
+    option.addEventListener("click", () => {
+      const value = option.getAttribute("data-value");
+
+      projectInput.value = value;
+      projectText.textContent = value;
+      projectText.classList.remove("text-gray-500");
+
+      projectDropdown.classList.add("hidden");
+
+      // Hide error if previously shown
+      projectError.classList.add("hidden");
+      projectButton.classList.remove("border-red-500");
+    });
+  });
+
+  // Validate on form submit
+  document.querySelector("form").addEventListener("submit", (e) => {
+    if (!projectInput.value) {
+      e.preventDefault(); // stop form submission
+      projectError.classList.remove("hidden");
+      projectButton.classList.add("border-red-500");
+    }
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!projectButton.contains(e.target) && !projectDropdown.contains(e.target)) {
+      projectDropdown.classList.add("hidden");
+    }
+  });
+</script>
 <script id="portfolio-filter">
 document.addEventListener('DOMContentLoaded', function() {
 const filterButtons = document.querySelectorAll('.portfolio-filter');
@@ -661,20 +753,21 @@ item.style.display = 'none';
 });
 });
 });
-function openModal(imageQuery, title, description) {
-const modal = document.getElementById('projectModal');
-const modalImage = document.getElementById('modalImage');
-const modalTitle = document.getElementById('modalTitle');
-const modalDescription = document.getElementById('modalDescription');
-modalImage.src = `https://readdy.ai/api/search-image?query=$%7BencodeURIComponent%28imageQuery%29%7D&width=800&height=600&seq=modal${Date.now()}&orientation=landscape`;
-modalTitle.textContent = title;
-modalDescription.textContent = description;
-modal.classList.add('active');
+function openImageView(element, title, description) {
+const overlay = document.getElementById('imageOverlay');
+const overlayImage = document.getElementById('overlayImage');
+const overlayTitle = document.getElementById('overlayTitle');
+const overlayDescription = document.getElementById('overlayDescription');
+const clickedImage = element.querySelector('img');
+overlayImage.src = clickedImage.src;
+overlayTitle.textContent = title;
+overlayDescription.textContent = description;
+overlay.classList.add('active');
 document.body.style.overflow = 'hidden';
 }
-function closeModal() {
-const modal = document.getElementById('projectModal');
-modal.classList.remove('active');
+function closeImageView() {
+const overlay = document.getElementById('imageOverlay');
+overlay.classList.remove('active');
 document.body.style.overflow = 'auto';
 }
 </script>
